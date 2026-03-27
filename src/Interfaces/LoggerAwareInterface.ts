@@ -1,4 +1,4 @@
-import { type LoggerInterface } from "./LoggerInterface";
+import type { LoggerInterface } from "./LoggerInterface";
 
 /**
  * Describes a logger-aware instance.

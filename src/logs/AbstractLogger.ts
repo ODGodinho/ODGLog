@@ -109,8 +109,8 @@ export abstract class AbstractLogger implements LoggerInterface {
     /**
      * Logs with an arbitrary level.
      *
-     * @param {LogLevel} level Log level
-     * @param {unknown} message Message Log
+     * @param {LogLevel} level Log level of this message
+     * @param {unknown} message Message of log with all data
      * @param {Record<string, string> | undefined} context Context Message replace
      * @returns {Promise<void>}
      */

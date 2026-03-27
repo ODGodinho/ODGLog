@@ -4,7 +4,7 @@ import { JSONLogger, JSONLoggerString } from "@odg/json-log";
 import chalk from "chalk";
 
 import { LogLevel } from "../index";
-import { type ContextType } from "../Interfaces/LoggerInterface";
+import type { ContextType } from "../Interfaces/LoggerInterface";
 
 import { AbstractLogger } from "./AbstractLogger";
 import { StringMessageFormatter } from "./StringMessageFormater";
@@ -24,22 +24,25 @@ export class ConsoleLogger extends AbstractLogger {
     /**
      * Logs with an arbitrary level.
      *
-     * @param {LogLevel} level Log level
-     * @param {unknown} message Message Log
+     * @param {LogLevel} level Level of the log message
+     * @param {unknown} message Message to log send
      * @param {ContextType | undefined} _context Context Message replace
      * @returns {Promise<void>}
      */
     public async log(level: LogLevel, message: unknown, _context?: ContextType): Promise<void> {
         let newMessage = util.format(message);
+
         if (message instanceof JSONLogger || message instanceof JSONLoggerString) {
             newMessage = new StringMessageFormatter().format(message);
         }
 
+        // eslint-disable-next-line no-console, no-restricted-syntax
         console.log(this.getLevel(level), newMessage);
     }
 
     private getLevel(level: LogLevel): string {
         const message = `  ${level}:  `;
+
         switch (level) {
             case LogLevel.EMERGENCY:
                 return chalk.bgBlack.bold.red(message);

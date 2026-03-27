@@ -1,9 +1,10 @@
-import {
-    type LoggerParserInterface, type LoggerPluginInterface,
+import type {
+    LoggerParserInterface,
+    LoggerPluginInterface,
 } from "../../src/index";
 
 /**
- * Test Plugin Logger
+ * Test Plugin Logger to unit tests
  *
  * @class TestPluginLogger
  * @implements {LoggerPluginInterface}

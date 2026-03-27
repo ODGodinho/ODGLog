@@ -1,7 +1,7 @@
-export * from "./LoggerAwareInterface";
+export type * from "./LoggerAwareInterface";
 
-export * from "./LoggerInterface";
+export type * from "./LoggerInterface";
 
 export * from "./LogLevel";
 
-export * from "./LoggerPluginInterface";
+export type * from "./LoggerPluginInterface";

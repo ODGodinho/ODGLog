@@ -1,6 +1,6 @@
 import util from "node:util";
 
-import { type JSONLoggerString, type JSONLogger } from "@odg/json-log";
+import type { JSONLogger, JSONLoggerString } from "@odg/json-log";
 import chalk from "chalk";
 
 export class StringMessageFormatter {

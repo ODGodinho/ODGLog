@@ -1,4 +1,4 @@
-import { type ContextType, type LogLevel } from ".";
+import type { ContextType, LogLevel } from ".";
 
 /**
  * Logger Plugin return parser
@@ -12,11 +12,6 @@ export interface LoggerParserInterface {
     context?: ContextType;
 }
 
-/**
- * Logger Plugin Interface
- *
- * @interface LoggerPluginInterface
- */
 export interface LoggerPluginInterface {
 
     /**

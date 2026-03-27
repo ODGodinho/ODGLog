@@ -1,5 +1,9 @@
-import {
-    type LoggerParserInterface, type ContextType, type LoggerPluginInterface, type LogLevel, type LoggerInterface,
+import type {
+    ContextType,
+    LoggerInterface,
+    LoggerParserInterface,
+    LoggerPluginInterface,
+    LogLevel,
 } from "../Interfaces";
 
 import { AbstractLogger } from "./AbstractLogger";
@@ -13,7 +17,7 @@ export class Logger extends AbstractLogger {
     /**
      * Add new handler logger
      *
-     * @param {LoggerInterface} logger Logger Handler
+     * @param {LoggerInterface} logger Logger Handler to push
      * @returns {void}
      */
     public pushHandler(logger: LoggerInterface): void {
@@ -63,9 +67,9 @@ export class Logger extends AbstractLogger {
     /**
      * Parser Plugin Logger
      *
-     * @param {LogLevel} level Logger
-     * @param {unknown} message Message Logger
-     * @param {ContextType | undefined} context Context
+     * @param {LogLevel} level Logger level of this message
+     * @param {unknown} message Message Logger with all data
+     * @param {ContextType | undefined} context Context extra data for log
      * @returns {Promise<LoggerParserInterface>}
      */
     private async getProcessorData(
@@ -74,15 +78,15 @@ export class Logger extends AbstractLogger {
         context?: ContextType,
     ): Promise<LoggerParserInterface> {
         const original = {
-            level: level,
-            message: message,
-            context: context,
+            level,
+            message,
+            context,
         };
         let newParser: LoggerParserInterface = {
-            original: original,
-            level: level,
-            message: message,
-            context: context,
+            original,
+            level,
+            message,
+            context,
         };
 
         for (const processor of this.processors) {

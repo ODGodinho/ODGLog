@@ -1,11 +1,12 @@
 import { Exception } from "@odg/exception";
 import { JSONLogger } from "@odg/json-log";
 
-import { ConsoleLogger, LogLevel, Logger } from "src";
+import { ConsoleLogger, Logger, LogLevel } from "src";
 import { StringMessageFormatter } from "src/logs/StringMessageFormater";
 
 describe("Test request message", () => {
     const logger = new Logger();
+
     logger.pushHandler(new ConsoleLogger());
     const localUrl = "http://localhost:3000";
 

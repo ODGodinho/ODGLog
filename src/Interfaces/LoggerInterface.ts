@@ -1,4 +1,4 @@
-import { type LogLevel } from "./LogLevel";
+import type { LogLevel } from "./LogLevel";
 
 /**
  * Content type in context
