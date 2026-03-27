@@ -16,7 +16,7 @@ describe("Logger class test", () => {
 
         const lastCallParameters = spy.mock.calls.at(-1);
 
-        expect(lastCallParameters[1]).toEqual("test");
+        expect(lastCallParameters![1]).toEqual("test");
     });
 
     test("Test Get Handlers and Processors", async () => {
